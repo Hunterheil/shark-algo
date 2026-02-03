@@ -7,11 +7,17 @@ import os
 API_KEY = os.getenv("API_KEY")
 API_SECRET = os.getenv("API_SECRET")
 
-exchange = ccxt.Exchange({
+exchange = ccxt.binance({
     'apiKey': API_KEY,
     'secret': API_SECRET,
     'enableRateLimit': True,
 })
+
+# Shark Binance-compatible endpoints
+exchange.urls['api'] = {
+    'public': 'https://api.sharkexchange.in/api/v3',
+    'private': 'https://api.sharkexchange.in/api/v3',
+}
 
 symbol = 'BTC/USDT'
 timeframe = '5m'
