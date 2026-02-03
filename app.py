@@ -7,7 +7,7 @@ import os
 API_KEY = os.getenv("API_KEY")
 API_SECRET = os.getenv("API_SECRET")
 
-exchange = ccxt.binance({
+exchange = ccxt.Exchange({
     'apiKey': API_KEY,
     'secret': API_SECRET,
     'enableRateLimit': True,
